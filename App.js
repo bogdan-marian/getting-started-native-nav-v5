@@ -1,20 +1,20 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import {HomeScreen} from './Screens'
+import {HomeScreen, SignIn} from './Screens'
 
-const Stack = createStackNavigator();
+const AuthStack = createStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
+      <AuthStack.Navigator>
+        <AuthStack.Screen name="SignIn" component={SignIn} />
+        <AuthStack.Screen name="Home" component={HomeScreen} />
+      </AuthStack.Navigator>
     </NavigationContainer>
   );
 }
