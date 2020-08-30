@@ -22,5 +22,8 @@ npm install @react-navigation/drawer
 npm install @react-navigation/bottom-tabs
 
 # basic native dependencies
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 
+# expo start
+expo start
 ```
