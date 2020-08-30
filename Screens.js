@@ -46,6 +46,18 @@ export const CreateAccount = ({ navigation }) => {
   );
 };
 
+export const Search2 = () => (
+  <ScreenContainer>
+    <Text>Search2 Screen</Text>
+  </ScreenContainer>
+);
+
+export const Details = ({ route }) => (
+  <ScreenContainer>
+    <Text>Details Screen</Text>
+  </ScreenContainer>
+);
+
 export const Search = ({ navigation }) => (
   <ScreenContainer>
     <Text> Search Screen</Text>
