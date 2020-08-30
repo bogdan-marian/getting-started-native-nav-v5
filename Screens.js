@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
+import{AuthContext} from './context'
 
 const styles = StyleSheet.create({
   container: {
@@ -82,10 +83,11 @@ export const Search = ({ navigation }) => (
 );
 
 export const SignIn = ({ navigation }) => {
+  const {signIn} = React.useContext(AuthContext); 
   return (
     <ScreenContainer>
       <Text>Sign in Screen</Text>
-      <Button title="Sign in" onPress={() => alert("todo!")} />
+      <Button title="Sign in" onPress={() => signIn()} />
       <Button
         title="Create Account"
         onPress={() => navigation.push("CreateAccount")}
