@@ -12,13 +12,27 @@ import { SignIn, CreateAccount, Profile, Home } from "./Screens";
 
 const AuthStack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
+const HomeStack = createStackNavigator();
+const ProfileStack = createStackNavigator();
+
+const HomeStackScreen = () => (
+  <HomeStack.Navigator>
+    <HomeStack.Screen name="Home" component={Home}/>
+  </HomeStack.Navigator>
+)
+
+const ProfileStackScreen = () => (
+  <ProfileStack.Navigator>
+    <ProfileStack.Screen name="Profile" component={Profile}/>
+  </ProfileStack.Navigator>
+)
 
 function App() {
   return (
     <NavigationContainer>
       <Tabs.Navigator>
-        <Tabs.Screen name="Home" component={Home} />
-        <Tabs.Screen name="Profile" component={Profile} />
+        <Tabs.Screen name="Home" component={HomeStackScreen} />
+        <Tabs.Screen name="Profile" component={ProfileStackScreen} />
       </Tabs.Navigator>
 
       {/* <AuthStack.Navigator>
