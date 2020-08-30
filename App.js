@@ -95,7 +95,7 @@ function App() {
     <AuthContext.Provider value ={authContext}>
       <NavigationContainer>
         {userToken ? (
-          <Drawer.Navigator>
+          <Drawer.Navigator initialRouteName="Profile">
             <Drawer.Screen name="Home" component={TabsScreen} />
             <Drawer.Screen name="Profile" component={ProfileStackScreen} />
           </Drawer.Navigator>
