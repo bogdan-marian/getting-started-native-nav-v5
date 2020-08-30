@@ -19,11 +19,23 @@ const ScreenContainer = ({ children }) => (
   <View style={styles.container}>{children}</View>
 );
 
-export const HomeScreen = () => {
+export const Home = ({navigation}) => {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
-    </View>
+    <ScreenContainer >
+      <Text>Home Main List Screen</Text>
+      <Button title="React Native by Example" onPress={()=>alert("todo!")}/>
+      <Button title="React Native School" onPress={()=>alert("todo!")}/>
+      <Button title="Drawer" onPress={()=>alert("todo!")}/>
+
+    </ScreenContainer>
+  );
+};
+
+export const Profile = ({navigation}) => {
+  return (
+    <ScreenContainer >
+      <Text>Profile Screen</Text>
+    </ScreenContainer>
   );
 };
 

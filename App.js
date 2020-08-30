@@ -3,15 +3,25 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import {
+  creatBottomTabNavigator,
+  createBottomTabNavigator,
+} from "@react-navigation/bottom-tabs";
 
-import { SignIn, CreateAccount } from "./Screens";
+import { SignIn, CreateAccount, Profile, Home } from "./Screens";
 
 const AuthStack = createStackNavigator();
+const Tabs = createBottomTabNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <AuthStack.Navigator>
+      <Tabs.Navigator>
+        <Tabs.Screen name="Home" component={Home} />
+        <Tabs.Screen name="Profile" component={Profile} />
+      </Tabs.Navigator>
+
+      {/* <AuthStack.Navigator>
         <AuthStack.Screen
           name="SignIn"
           component={SignIn}
@@ -22,7 +32,7 @@ function App() {
           component={CreateAccount}
           options={{ title: "Create Account" }}
         />
-      </AuthStack.Navigator>
+      </AuthStack.Navigator> */}
     </NavigationContainer>
   );
 }
