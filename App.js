@@ -14,6 +14,7 @@ import {
   Search,
   Search2,
   Details,
+  Splash,
 } from "./Screens";
 
 const AuthStack = createStackNavigator();
@@ -58,12 +59,23 @@ const TabsScreen = () => (
 const Drawer = createDrawerNavigator();
 
 function App() {
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
+  if (isLoading) {
+    return <Splash />;
+  }
+
   return (
     <NavigationContainer>
-
       <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={TabsScreen}/>
-        <Drawer.Screen name="Profile" component={ProfileStackScreen}/>
+        <Drawer.Screen name="Home" component={TabsScreen} />
+        <Drawer.Screen name="Profile" component={ProfileStackScreen} />
       </Drawer.Navigator>
 
       {/* <AuthStack.Navigator>
