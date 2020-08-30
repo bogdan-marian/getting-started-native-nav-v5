@@ -8,7 +8,15 @@ import {
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 
-import { SignIn, CreateAccount, Profile, Home ,Search, Search2, Details} from "./Screens";
+import {
+  SignIn,
+  CreateAccount,
+  Profile,
+  Home,
+  Search,
+  Search2,
+  Details,
+} from "./Screens";
 
 const AuthStack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -17,17 +25,23 @@ const SearchStack = createStackNavigator();
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
-    <HomeStack.Screen name="Home" component={Home}/>
-    <HomeStack.Screen name = "Details" component={Details}/>
+    <HomeStack.Screen name="Home" component={Home} />
+    <HomeStack.Screen
+      name="Details"
+      component={Details}
+      options={({ route }) => ({
+        title: route.params.name,
+      })}
+    />
   </HomeStack.Navigator>
-)
+);
 
 const SearchStackScreen = () => (
   <SearchStack.Navigator>
-    <SearchStack.Screen name="Search" component={Search}/>
-    <SearchStack.Screen name="Search2" component={Search2}/>
+    <SearchStack.Screen name="Search" component={Search} />
+    <SearchStack.Screen name="Search2" component={Search2} />
   </SearchStack.Navigator>
-)
+);
 
 function App() {
   return (
