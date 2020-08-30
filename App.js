@@ -60,6 +60,7 @@ const Drawer = createDrawerNavigator();
 
 function App() {
   const [isLoading, setIsLoading] = React.useState(true);
+  const [userToken, setUserToken] = React.useState(null);
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -73,23 +74,25 @@ function App() {
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={TabsScreen} />
-        <Drawer.Screen name="Profile" component={ProfileStackScreen} />
-      </Drawer.Navigator>
-
-      {/* <AuthStack.Navigator>
-        <AuthStack.Screen
-          name="SignIn"
-          component={SignIn}
-          options={{ title: "Sign In" }}
-        />
-        <AuthStack.Screen
-          name="CreateAccount"
-          component={CreateAccount}
-          options={{ title: "Create Account" }}
-        />
-      </AuthStack.Navigator> */}
+      {userToken ? (
+        <Drawer.Navigator>
+          <Drawer.Screen name="Home" component={TabsScreen} />
+          <Drawer.Screen name="Profile" component={ProfileStackScreen} />
+        </Drawer.Navigator>
+      ) : (
+        <AuthStack.Navigator>
+          <AuthStack.Screen
+            name="SignIn"
+            component={SignIn}
+            options={{ title: "Sign In" }}
+          />
+          <AuthStack.Screen
+            name="CreateAccount"
+            component={CreateAccount}
+            options={{ title: "Create Account" }}
+          />
+        </AuthStack.Navigator>
+      )}
     </NavigationContainer>
   );
 }
