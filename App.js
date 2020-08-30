@@ -8,12 +8,12 @@ import {
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 
-import { SignIn, CreateAccount, Profile, Home } from "./Screens";
+import { SignIn, CreateAccount, Profile, Home ,Search} from "./Screens";
 
 const AuthStack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
-const ProfileStack = createStackNavigator();
+const SearchStack = createStackNavigator();
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
@@ -21,10 +21,10 @@ const HomeStackScreen = () => (
   </HomeStack.Navigator>
 )
 
-const ProfileStackScreen = () => (
-  <ProfileStack.Navigator>
-    <ProfileStack.Screen name="Profile" component={Profile}/>
-  </ProfileStack.Navigator>
+const SearchStackScreen = () => (
+  <SearchStack.Navigator>
+    <SearchStack.Screen name="Profile" component={Search}/>
+  </SearchStack.Navigator>
 )
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
     <NavigationContainer>
       <Tabs.Navigator>
         <Tabs.Screen name="Home" component={HomeStackScreen} />
-        <Tabs.Screen name="Profile" component={ProfileStackScreen} />
+        <Tabs.Screen name="Search" component={SearchStackScreen} />
       </Tabs.Navigator>
 
       {/* <AuthStack.Navigator>

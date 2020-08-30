@@ -19,21 +19,20 @@ const ScreenContainer = ({ children }) => (
   <View style={styles.container}>{children}</View>
 );
 
-export const Home = ({navigation}) => {
+export const Home = ({ navigation }) => {
   return (
-    <ScreenContainer >
+    <ScreenContainer>
       <Text>Home Main List Screen</Text>
-      <Button title="React Native by Example" onPress={()=>alert("todo!")}/>
-      <Button title="React Native School" onPress={()=>alert("todo!")}/>
-      <Button title="Drawer" onPress={()=>alert("todo!")}/>
-
+      <Button title="React Native by Example" onPress={() => alert("todo!")} />
+      <Button title="React Native School" onPress={() => alert("todo!")} />
+      <Button title="Drawer" onPress={() => alert("todo!")} />
     </ScreenContainer>
   );
 };
 
-export const Profile = ({navigation}) => {
+export const Profile = ({ navigation }) => {
   return (
-    <ScreenContainer >
+    <ScreenContainer>
       <Text>Profile Screen</Text>
     </ScreenContainer>
   );
@@ -46,6 +45,14 @@ export const CreateAccount = ({ navigation }) => {
     </ScreenContainer>
   );
 };
+
+export const Search = ({ navigation }) => (
+  <ScreenContainer>
+    <Text> Search Screen</Text>
+    <Button title="Search 2" onPress={() => alert("todo!")} />
+    <Button title="React serach school" onPress={() => alert("todo!")} />
+  </ScreenContainer>
+);
 
 export const SignIn = ({ navigation }) => {
   return (
