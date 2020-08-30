@@ -23,8 +23,14 @@ export const Home = ({ navigation }) => {
   return (
     <ScreenContainer>
       <Text>Home Main List Screen</Text>
-      <Button title="React Native by Example" onPress={() => alert("todo!")} />
-      <Button title="React Native School" onPress={() => alert("todo!")} />
+      <Button
+        title="React Native by Example"
+        onPress={() => navigation.push("Details")}
+      />
+      <Button
+        title="React Native School"
+        onPress={() => navigation.push("Details")}
+      />
       <Button title="Drawer" onPress={() => alert("todo!")} />
     </ScreenContainer>
   );
