@@ -27,12 +27,23 @@ export const HomeScreen = () => {
   );
 };
 
+export const CreateAccount = ({ navigation }) => {
+  return (
+    <ScreenContainer>
+      <Text>Create account Screen</Text>
+    </ScreenContainer>
+  );
+};
+
 export const SignIn = ({ navigation }) => {
   return (
     <ScreenContainer>
       <Text>Sign in Screen</Text>
       <Button title="Sign in" onPress={() => alert("todo!")} />
-      <Button title="Create Account" onPress={() => alert("todo!")} />
+      <Button
+        title="Create Account"
+        onPress={() => navigation.push("CreateAccount")}
+      />
     </ScreenContainer>
   );
 };

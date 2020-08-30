@@ -4,7 +4,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import {HomeScreen, SignIn} from './Screens'
+import { SignIn, CreateAccount} from './Screens'
 
 const AuthStack = createStackNavigator();
 
@@ -13,7 +13,7 @@ function App() {
     <NavigationContainer>
       <AuthStack.Navigator>
         <AuthStack.Screen name="SignIn" component={SignIn} />
-        <AuthStack.Screen name="Home" component={HomeScreen} />
+        <AuthStack.Screen name="CreateAccount" component={CreateAccount} />
       </AuthStack.Navigator>
     </NavigationContainer>
   );
