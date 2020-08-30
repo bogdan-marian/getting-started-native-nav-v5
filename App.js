@@ -3,10 +3,8 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import {
-  creatBottomTabNavigator,
-  createBottomTabNavigator,
-} from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import {
   SignIn,
@@ -43,13 +41,30 @@ const SearchStackScreen = () => (
   </SearchStack.Navigator>
 );
 
+const ProfileStack = createStackNavigator();
+const ProfileStackScreen = () => (
+  <ProfileStack.Navigator>
+    <ProfileStack.Screen name="Profile" component={Profile} />
+  </ProfileStack.Navigator>
+);
+
+const TabsScreen = () => (
+  <Tabs.Navigator>
+    <Tabs.Screen name="Home" component={HomeStackScreen} />
+    <Tabs.Screen name="Search" component={SearchStackScreen} />
+  </Tabs.Navigator>
+);
+
+const Drawer = createDrawerNavigator();
+
 function App() {
   return (
     <NavigationContainer>
-      <Tabs.Navigator>
-        <Tabs.Screen name="Home" component={HomeStackScreen} />
-        <Tabs.Screen name="Search" component={SearchStackScreen} />
-      </Tabs.Navigator>
+
+      <Drawer.Navigator>
+        <Drawer.Screen name="Home" component={TabsScreen}/>
+        <Drawer.Screen name="Profile" component={ProfileStackScreen}/>
+      </Drawer.Navigator>
 
       {/* <AuthStack.Navigator>
         <AuthStack.Screen
